@@ -38,15 +38,29 @@ class MainActivity : AppCompatActivity() {
                 Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
 
                 binding.idMenu.layoutManager = LinearLayoutManager(this@MainActivity)
-                binding.idMenu.adapter = HPAdapter(this@MainActivity, response.body()!!)
+                binding.idMenu.adapter = HPAdapter(this@MainActivity, response.body()!!, {selectedHP->
+                    hpClicked(selectedHP)
+                })
 
 
             }
 
             override fun onFailure(call: Call<ArrayList<HP>>, t: Throwable) {
                 binding.pbConexion.visibility=View.GONE
-                Toast.makeText(this@MainActivity, "No hay conexión", Toast.LENGTH_SHORT)
+                Toast.makeText(this@MainActivity, "No hay conexión", Toast.LENGTH_SHORT).show()
             }
         })
     }
+
+    private fun hpClicked(hp: HP){
+
+       // Toast.makeText(this, "Click en el elemento con titulo ${hp.name}", Toast.LENGTH_SHORT).show()
+
+        val bundle = Bundle()
+        bundle.putString("id", hp.id)
+        val intent = Intent(this,Info::class.java)
+        intent.putExtras(bundle)
+        startActivity(intent)
+    }
+
 }
