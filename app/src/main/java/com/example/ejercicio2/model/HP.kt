@@ -4,9 +4,13 @@ data class HP(
 
         @SerializedName("id")
         var id: String?,
-        @SerializedName("thumbnail")
-        var thumbnail: String?,
-        @SerializedName("title")
-        var title: String?
+        @SerializedName("image")
+        var image: String?,
+        @SerializedName("name")
+        var name: String?,
+        @SerializedName("actor")
+        var actor: String?,
+        @SerializedName("house")
+        var house: String?
 
 )

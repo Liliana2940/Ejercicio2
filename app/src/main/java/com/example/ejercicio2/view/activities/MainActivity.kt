@@ -13,6 +13,7 @@ import com.example.ejercicio2.model.HP
 import com.example.ejercicio2.network.HPApi
 import com.example.ejercicio2.network.RetrofitService
 import com.example.ejercicio2.utils.Constants
+import com.example.ejercicio2.view.adapters.HPAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,6 +35,12 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<ArrayList<HP>>, response: Response<ArrayList<HP>>) {
                 binding.pbConexion.visibility=View.GONE
                 Log.d(Constants.LOGTAG, "Respuesta del servidor: ${response.toString()}")
+                Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
+
+                binding.idMenu.layoutManager = LinearLayoutManager(this@MainActivity)
+                binding.idMenu.adapter = HPAdapter(this@MainActivity, response.body()!!)
+
+
             }
 
             override fun onFailure(call: Call<ArrayList<HP>>, t: Throwable) {
