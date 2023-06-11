@@ -47,9 +47,9 @@ class Info : AppCompatActivity() {
                     .load(response.body()!!.component1().image)
                     .into(binding.ivImage)
                 binding.tvLongDesc2.text = response.body()!!.component1().actor
-                //binding.tvLongDesc3.text = response.body()!!.component1().ancestry
+                binding.tvLongDesc3.text = response.body()!!.component1().ancestry
                 binding.tvLongDesc4.text = response.body()!!.component1().patronus
-               // binding.tvLongDesc5.text = response.body()!!.component1().dateOfBirth
+                binding.tvLongDesc5.text = response.body()!!.component1().dateOfBirth
             }
             override fun onFailure(call: Call<ArrayList<HP>>, t: Throwable) {
                 binding.pbConexion.visibility = View.GONE

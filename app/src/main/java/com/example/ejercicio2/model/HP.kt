@@ -14,12 +14,12 @@ data class HP(
         var house: String?,
 
 
-//@SerializedName("dateOfBirth")
-//var dateOfBirth: Int,
+@SerializedName("dateOfBirth")
+var dateOfBirth: String?,
 
 @SerializedName("patronus")
-var patronus: String
+var patronus: String?,
 
-//@SerializedName("ancestry")
-//var ancestry: String
+@SerializedName("ancestry")
+var ancestry: String?
 )
