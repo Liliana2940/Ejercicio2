@@ -3,17 +3,22 @@ package com.example.ejercicio2.model
 import com.google.gson.annotations.SerializedName
 
 data class HPDetail(
+
+    @SerializedName("id")
+    var id: String,
+
     @SerializedName("name")
-    var name: String?,
+    var name: String,
 
     @SerializedName("image")
-    var image: String?,
+    var image: String,
 
     @SerializedName("actor")
-    var actor: String?,
+    var actor: String,
 
     @SerializedName("house")
-    var house: String?
+    var house: String,
 
-
+    @SerializedName("dateOfBirth")
+    var dateBirth: Int
 )

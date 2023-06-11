@@ -13,20 +13,25 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
 
-        android:background="#EDE194"
+        android:background="#B5FAC760"
         android:paddingBottom="10dp"
+        android:rotationX="4"
+        android:rotationY="-10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvTitle"
         tools:layout_editor_absoluteX="4dp" />
 
+
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/ivThumbnail"
-        android:layout_width="70dp"
-        android:layout_height="110dp"
+        android:layout_width="85dp"
+        android:layout_height="111dp"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="5dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="@id/guideline8"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:riv_corner_radius="10dp" />
@@ -34,8 +39,8 @@
 
     <TextView
         android:id="@+id/tvTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="272dp"
+        android:layout_height="29dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
 
@@ -45,15 +50,16 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toEndOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@+id/guideline7"
+        app:layout_constraintVertical_bias="0.0"
         tools:text="Title" />
-
 
     <TextView
         android:id="@+id/tvDeveloper"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="273dp"
+        android:layout_height="14dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="8dp"
@@ -64,13 +70,15 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/tvReleased"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.379"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toTopOf="@id/guideline6" />
+        app:layout_constraintTop_toTopOf="@id/guideline6"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tvReleased"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="272dp"
+        android:layout_height="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="8dp"
@@ -81,7 +89,7 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@id/guideline5"
         app:layout_constraintVertical_bias="1.0" />
@@ -119,7 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="50dp" />
+        app:layout_constraintGuide_begin="52dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
