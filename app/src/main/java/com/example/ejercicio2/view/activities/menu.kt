@@ -24,9 +24,12 @@ class menu : AppCompatActivity() {
         // Toast.makeText(this, "Click en el elemento con titulo ${hp.name}", Toast.LENGTH_SHORT).show()
         botonEst.setOnClickListener {
             val bundle = Bundle()
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainStudent::class.java)
 
-            bundle.putString("true", student.toString())
+           // val studentVal = bundle?.getBoolean("student", true)
+
+
+            bundle.putString(true.toString(), student.toString())
             intent.putExtras(bundle)
             startActivity(intent)
         }
@@ -34,7 +37,7 @@ class menu : AppCompatActivity() {
         botonPers.setOnClickListener {
             val bundle = Bundle()
             val intent = Intent(this, MainActivity::class.java)
-            bundle.putString("false", student.toString())
+            bundle.putString(false.toString(), student.toString())
             intent.putExtras(bundle)
             startActivity(intent)
         }

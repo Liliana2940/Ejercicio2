@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.ejercicio2.databinding.ActivityMainBinding
+import com.example.ejercicio2.databinding.ActivityMainStudentBinding
 import com.example.ejercicio2.model.HP
 import com.example.ejercicio2.network.HPApi
 import com.example.ejercicio2.network.RetrofitService
@@ -18,12 +18,12 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class MainStudent : AppCompatActivity() {
+    private lateinit var binding: ActivityMainStudentBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainStudentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val bundle = intent.extras
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val call = RetrofitService.getRetrofit().create(HPApi::class.java)
-            .getHP("/api/characters/staff")  //Para Apiary
+            .getHP("/api/characters/students")  //Para Apiary
         //.getGames("cm/games/games_list.php") //Para www.serverbpw.com
 
         call.enqueue(object: Callback<ArrayList<HP>>{
@@ -42,9 +42,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-                binding.idMenu.layoutManager = LinearLayoutManager(this@MainActivity)
+                binding.idMenu.layoutManager = LinearLayoutManager(this@MainStudent)
                 //binding.idMenu.adapter = HPAdapter(this@MainActivity, response.body()!!,response.body()!!.component1().student) { selectedHP ->
-                binding.idMenu.adapter = HPAdapter(this@MainActivity, response.body()!!) { selectedHP ->
+                binding.idMenu.adapter = HPAdapter(this@MainStudent, response.body()!!) { selectedHP ->
                     hpClicked(selectedHP)
                 }
 
@@ -53,14 +53,14 @@ class MainActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<ArrayList<HP>>, t: Throwable) {
                 binding.pbConexion.visibility=View.GONE
-                Toast.makeText(this@MainActivity, "No hay conexión", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainStudent, "No hay conexión", Toast.LENGTH_SHORT).show()
             }
         })
     }
 
     private fun hpClicked(hp: HP){
 
-       // Toast.makeText(this, "Click en el elemento con titulo ${hp.name}", Toast.LENGTH_SHORT).show()
+        // Toast.makeText(this, "Click en el elemento con titulo ${hp.name}", Toast.LENGTH_SHORT).show()
 
         val bundle = Bundle()
         bundle.putString("id", hp.id)

@@ -11,9 +11,9 @@ import com.example.ejercicio2.databinding.ActivityMainBinding
 import com.example.ejercicio2.databinding.HpElementBinding
 import com.example.ejercicio2.model.HP
 
-class HPAdapter(private var context: Context, private var hp:ArrayList<HP>, private val studentVal: Boolean?, private val clickListener: (HP)-> Unit): RecyclerView.Adapter<HPAdapter.ViewHolder> (){
+class HPAdapter(private var context: Context, private var hp:ArrayList<HP>, private val clickListener: (HP)-> Unit): RecyclerView.Adapter<HPAdapter.ViewHolder> () {
     //private var studentVal: String? = null
-    class ViewHolder(view:HpElementBinding):RecyclerView.ViewHolder(view.root) {
+    class ViewHolder(view: HpElementBinding) : RecyclerView.ViewHolder(view.root) {
         val ivThumnail = view.ivThumbnail
         val tvReleased = view.tvReleased
         val tvTitle = view.tvTitle
@@ -22,10 +22,11 @@ class HPAdapter(private var context: Context, private var hp:ArrayList<HP>, priv
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            val binding = HpElementBinding.inflate(LayoutInflater.from(context))
-            return  ViewHolder(binding)
+        val binding = HpElementBinding.inflate(LayoutInflater.from(context))
+        return ViewHolder(binding)
 
-         }
+    }
+
     class HPAdapter : AppCompatActivity() {
         private lateinit var binding: ActivityMainBinding
         override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,45 +39,68 @@ class HPAdapter(private var context: Context, private var hp:ArrayList<HP>, priv
             // studentVal = bundle?.getString("student", "")
 
 
-        }}
+        }
+    }
+
     override fun getItemCount(): Int = hp.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.tvStudent.freezesText= hp[position].student == true
-        var student= holder.tvStudent.freezesText  //el valor de la lista de caracteres dice si es falso o verdadero ser estudiante
 
-      //  studentVal el valor del menu, que seran si todos estudiante o personal
-        if(studentVal==true) {
-            if(student==studentVal){
-          //  holder.tvTitle.text = hp[position].name
-           // holder.tvDeveloper.text = hp[position].actor
-            holder.tvReleased.text = hp[position].house
+        holder.tvTitle.text = hp[position].name
+        holder.tvDeveloper.text =hp[position].actor
+        holder.tvReleased.text = hp[position].house
+        Glide.with(context)
+            .load(hp[position].image)
+            .into(holder.ivThumnail)
 
-            Glide.with(context)
-                .load(hp[position].image)
-                .into(holder.ivThumnail)
+        holder.itemView.setOnClickListener {
+            clickListener(hp[position])
+        }
+        /*
+        val currentHP = hp[position]
+        //holder.tvStudent.freezesText = hp[position].student == true
+        var student = holder.tvStudent.freezesText  //el valor de la lista de caracteres dice si es falso o verdadero ser estudiante
+        val isStudent= currentHP.student
+        //  studentVal el valor del menu, que seran si todos estudiante o personal
+        if (studentVal=="true") {  //condición para mostrar todos los estudiantes
+            if (student) {  //condicion para solo mostrar a los estudiantes
+                holder.tvTitle.text = hp[position].name
+                holder.tvDeveloper.text = hp[position].actor
+                holder.tvReleased.text = hp[position].house
 
-            holder.itemView.setOnClickListener {
-                clickListener(hp[position])
-            }
-            }}
-            //else if(studentVal==false) {
-                if (student == studentVal) {
-                    holder.tvTitle.text = hp[position].name
-                    holder.tvDeveloper.text = hp[position].actor
-                    holder.tvReleased.text = hp[position].house
+                Glide.with(context)
+                    .load(hp[position].image)
+                    .into(holder.ivThumnail)
 
-                    // Glide.with(context)
-                    //   .load(hp[position].image)
-                    // .into(holder.ivThumnail)
-
-                    holder.itemView.setOnClickListener {
-                        clickListener(hp[position])
-                    }
+                holder.itemView.setOnClickListener {
+                    clickListener(hp[position])
                 }
+            }
+            else {
+                         //  holder.itemView.visibility = View.GONE
+            }
 
+        } //else if (studentVal == false) {
+            else{
+            //&&} !currentHP.student) {
+            //holder.tvTitle.text = hp[position].name
+            if (student) {
+                holder.itemView.visibility = View.GONE
+            } else {
+                holder.tvDeveloper.text = hp[position].actor
+                holder.tvReleased.text = hp[position].house
+
+                // Glide.with(context)
+                //   .load(hp[position].image)
+                // .into(holder.ivThumnail)
+
+                holder.itemView.setOnClickListener {
+                    clickListener(hp[position])
+                }
+            }
+        }
             //}
-
-    }}
-
+*/
+        }
+    }
 
