@@ -20,5 +20,11 @@ data class HPDetail(
     var house: String,
 
     @SerializedName("dateOfBirth")
-    var dateBirth: Int
+    var dateOfBirth: Int,
+
+    @SerializedName("patronus")
+    var patronus: String,
+
+    @SerializedName("ancestry")
+    var ancestry: String
 )
