@@ -13,7 +13,8 @@ data class HP(
         @SerializedName("house")
         var house: String?,
 
-
+        @SerializedName("hogwartsStudent")
+        var student: Boolean?,
 @SerializedName("dateOfBirth")
 var dateOfBirth: String?,
 

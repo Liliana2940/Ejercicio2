@@ -3,12 +3,12 @@ package com.example.ejercicio2.view.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import androidx.appcompat.app.AppCompatActivity
-import com.example.ejercicio2.databinding.ActivityMainBinding
 import android.util.Log
+import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.ejercicio2.databinding.ActivityMainBinding
 import com.example.ejercicio2.model.HP
 import com.example.ejercicio2.network.HPApi
 import com.example.ejercicio2.network.RetrofitService
@@ -26,6 +26,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val bundle = intent.extras
+        val student = bundle?.getString("student", "")
+
 
         val call = RetrofitService.getRetrofit().create(HPApi::class.java)
             .getHP("/api/characters")  //Para Apiary
@@ -37,10 +40,12 @@ class MainActivity : AppCompatActivity() {
                 Log.d(Constants.LOGTAG, "Respuesta del servidor: ${response.toString()}")
                 Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
 
+
+
                 binding.idMenu.layoutManager = LinearLayoutManager(this@MainActivity)
-                binding.idMenu.adapter = HPAdapter(this@MainActivity, response.body()!!, {selectedHP->
+                binding.idMenu.adapter = HPAdapter(this@MainActivity, response.body()!!,response.body()!!.component1().student) { selectedHP ->
                     hpClicked(selectedHP)
-                })
+                }
 
 
             }
