@@ -50,6 +50,8 @@ class Info : AppCompatActivity() {
                 binding.tvLongDesc3.text = response.body()!!.component1().ancestry
                 binding.tvLongDesc4.text = response.body()!!.component1().patronus
                 binding.tvLongDesc5.text = response.body()!!.component1().dateOfBirth
+                binding.tvLongDesc6.text = response.body()!!.component1().species
+
             }
             override fun onFailure(call: Call<ArrayList<HP>>, t: Throwable) {
                 binding.pbConexion.visibility = View.GONE

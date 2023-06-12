@@ -18,7 +18,7 @@ class HPAdapter(private var context: Context, private var hp:ArrayList<HP>, priv
         val tvReleased = view.tvReleased
         val tvTitle = view.tvTitle
         val tvDeveloper = view.tvDeveloper
-        val tvStudent = view.tvEstudiante
+//        val tvStudent = view.tvEstudiante
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -35,7 +35,7 @@ class HPAdapter(private var context: Context, private var hp:ArrayList<HP>, priv
             binding = ActivityMainBinding.inflate(layoutInflater)
             setContentView(binding.root)
 
-            val bundle = intent.extras
+            //val bundle = intent.extras
             // studentVal = bundle?.getString("student", "")
 
 

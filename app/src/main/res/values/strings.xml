@@ -7,6 +7,16 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="house">House:</string>
+    <string name="actor">Actor:</string>
+    <string name="ancestry">Ancestry:</string>
+    <string name="patronus">Patronus:</string>
+    <string name="date_of_birth">Date of Birth:</string>
+    <string name="species">Specie:</string>
+    <string name="harry_potter">Harry Potter</string>
+    <string name="estudiantes_de_hogwarts">Estudiantes de Hogwarts</string>
+    <string name="personal_de_hogwarts">Personal de Hogwarts</string>
 </resources>

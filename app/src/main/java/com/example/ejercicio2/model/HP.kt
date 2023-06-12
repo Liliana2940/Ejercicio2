@@ -15,12 +15,16 @@ data class HP(
 
         @SerializedName("hogwartsStudent")
         var student: Boolean,
-@SerializedName("dateOfBirth")
-var dateOfBirth: String?,
 
-@SerializedName("patronus")
-var patronus: String?,
+        @SerializedName("dateOfBirth")
+        var dateOfBirth: String?,
 
-@SerializedName("ancestry")
-var ancestry: String?
+        @SerializedName("patronus")
+        var patronus: String?,
+
+        @SerializedName("ancestry")
+        var ancestry: String?,
+
+        @SerializedName("species")
+        var species: String?
 )

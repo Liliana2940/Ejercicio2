@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val bundle = intent.extras
-        val student = bundle?.getString("student", "")
+        //val bundle = intent.extras
+       // val student = bundle?.getString("student", "")
 
 
         val call = RetrofitService.getRetrofit().create(HPApi::class.java)
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         call.enqueue(object: Callback<ArrayList<HP>>{
             override fun onResponse(call: Call<ArrayList<HP>>, response: Response<ArrayList<HP>>) {
                 binding.pbConexion.visibility=View.GONE
-                Log.d(Constants.LOGTAG, "Respuesta del servidor: ${response.toString()}")
+                Log.d(Constants.LOGTAG, "Respuesta del servidor: $response")
                 Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
 
 

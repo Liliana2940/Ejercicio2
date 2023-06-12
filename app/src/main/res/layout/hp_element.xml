@@ -40,15 +40,16 @@
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="272dp"
-        android:layout_height="29dp"
+        android:layout_height="36dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
 
+        android:fontFamily="@font/harry"
         android:includeFontPadding="false"
         android:paddingTop="8dp"
         android:textColor="#0E1A37"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@id/guideline6"
+        app:layout_constraintBottom_toTopOf="@+id/tvDeveloper"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toEndOf="@+id/guideline8"
@@ -58,16 +59,17 @@
 
     <TextView
         android:id="@+id/tvDeveloper"
-        android:layout_width="273dp"
-        android:layout_height="14dp"
+        android:layout_width="272dp"
+        android:layout_height="24dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="8dp"
 
+        android:fontFamily="@font/harry"
         android:includeFontPadding="false"
-        android:text="Actor"
+        android:text="@string/actor"
         android:textColor="#651906"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/tvReleased"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.379"
@@ -77,16 +79,17 @@
 
     <TextView
         android:id="@+id/tvReleased"
-        android:layout_width="272dp"
-        android:layout_height="16dp"
+        android:layout_width="274dp"
+        android:layout_height="24dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="8dp"
 
+        android:fontFamily="@font/harry"
         android:includeFontPadding="false"
-        android:text="Casa"
+        android:text="@string/house"
         android:textColor="#3E3B3B"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.433"
@@ -143,17 +146,6 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.22" />
 
-    <TextView
-        android:id="@+id/tvEstudiante"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Estudiante:"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tvReleased"
-        app:layout_constraintHorizontal_bias="0.818"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline5"
-        app:layout_constraintVertical_bias="0.542" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,7 +19,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="UselessParent">
 
 
                 <LinearLayout
@@ -32,11 +33,11 @@
                         android:id="@+id/tvTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
+                        android:fontFamily="@font/harry"
                         android:gravity="center_horizontal"
                         android:paddingBottom="10dp"
                         android:textColor="@color/white"
-                        android:textSize="25sp"
+                        android:textSize="50sp"
                         tools:text="Title" />
 
                     <com.makeramen.roundedimageview.RoundedImageView
@@ -52,79 +53,94 @@
                         android:id="@+id/tvLongDesc"
                         android:layout_width="match_parent"
                         android:layout_height="74dp"
-
+                        android:fontFamily="@font/harry"
+                        android:hint="@string/actor"
                         android:paddingLeft="15dp"
                         android:paddingTop="15dp"
                         android:paddingRight="15dp"
                         android:paddingBottom="10dp"
+                        android:text="@string/house"
                         android:textColor="@color/white"
                         android:textSize="20sp"
-                        tools:text="Description" />
+                        android:textStyle="bold"
+                        tools:text="@string/house" />
 
                     <TextView
                         android:id="@+id/tvLongDesc2"
                         android:layout_width="match_parent"
                         android:layout_height="77dp"
-
+                        android:fontFamily="@font/harry"
                         android:paddingLeft="15dp"
                         android:paddingTop="15dp"
                         android:paddingRight="15dp"
                         android:paddingBottom="10dp"
+                        android:text="@string/actor"
                         android:textColor="@color/white"
                         android:textSize="20sp"
-                        tools:text="Description" />
+                        android:textStyle="bold"
+                        tools:text="@string/actor" />
 
                     <TextView
                         android:id="@+id/tvLongDesc3"
                         android:layout_width="match_parent"
                         android:layout_height="73dp"
-
+                        android:fontFamily="@font/harry"
                         android:paddingLeft="15dp"
                         android:paddingTop="15dp"
                         android:paddingRight="15dp"
                         android:paddingBottom="10dp"
+                        android:text="@string/ancestry"
                         android:textColor="@color/white"
                         android:textSize="20sp"
-                        tools:text="Description" />
+                        android:textStyle="bold"
+                        tools:text="@string/ancestry" />
 
                     <TextView
                         android:id="@+id/tvLongDesc4"
                         android:layout_width="match_parent"
                         android:layout_height="83dp"
-
+                        android:fontFamily="@font/harry"
                         android:paddingLeft="15dp"
                         android:paddingTop="15dp"
                         android:paddingRight="15dp"
                         android:paddingBottom="10dp"
+                        android:text="@string/patronus"
                         android:textColor="@color/white"
                         android:textSize="20sp"
-                        tools:text="Description" />
+                        android:textStyle="bold"
+                        tools:text="@string/patronus" />
 
                     <TextView
                         android:id="@+id/tvLongDesc5"
                         android:layout_width="match_parent"
                         android:layout_height="77dp"
-
+                        android:fontFamily="@font/harry"
                         android:paddingLeft="15dp"
                         android:paddingTop="15dp"
                         android:paddingRight="15dp"
                         android:paddingBottom="10dp"
+                        android:text="@string/date_of_birth"
                         android:textColor="@color/white"
                         android:textSize="20sp"
-                        tools:text="Description" />
+                        android:textStyle="bold"
+                        tools:text="@string/date_of_birth" />
 
                     <TextView
                         android:id="@+id/tvLongDesc6"
                         android:layout_width="match_parent"
                         android:layout_height="77dp"
-
+                        android:fontFamily="@font/harry"
                         android:paddingLeft="15dp"
                         android:paddingTop="15dp"
                         android:paddingRight="15dp"
                         android:paddingBottom="10dp"
+                        android:text="@string/species"
                         android:textColor="@color/white"
                         android:textSize="20sp"
-                        tools:text="Description" />
+                        android:textStyle="bold"
+                        tools:text="@string/species" />
+
+
 
                 </LinearLayout>
             </ScrollView>
